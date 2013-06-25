@@ -1,0 +1,11 @@
+.eunit
+ebin
+*.beam
+*~
+deps
+doc
+logs
+.DS_Store
+erl_crash.dump
+/.msgpack_rpc_server.plt
+/rebar
