@@ -31,7 +31,7 @@ start_link() ->
 %%====================================================================
 
 init(_Args) ->
-    TaskFSMs = {msgpack_rpc_task_fsm_sup,
-        {msgpack_rpc_task_fsm_sup, start_link, []},
-        permanent, infinity, supervisor, [msgpack_rpc_task_fsm_sup]},
-    {ok, {{one_for_one, 5, 10}, [TaskFSMs]}}.
+    StatelessFSMs = {msgpack_rpc_stateless_fsm_sup,
+        {msgpack_rpc_stateless_fsm_sup, start_link, []},
+        permanent, infinity, supervisor, [msgpack_rpc_stateless_fsm_sup]},
+    {ok, {{one_for_one, 5, 10}, [StatelessFSMs]}}.
